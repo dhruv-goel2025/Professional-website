@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Strategy & Operations Executive</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 0;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #0055aa;
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #0066cc;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #0066cc;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(0, 102, 204, 0.1);
+        }
+        
+        /* Value proposition section */
+        .value-proposition {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        
+        .value-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .value-card {
+            flex-basis: calc(33.333% - 30px);
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .value-card p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex-basis: calc(33.333% - 30px);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            color: #777;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 0;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .value-card {
+                flex-basis: calc(50% - 15px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 20px;
+            }
+            
+            .value-card {
+                flex-basis: 100%;
+            }
+            
+            .footer-section {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Dhruv Goel</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Strategic & Operations Leadership for High-Growth Companies</h1>
+                <p class="tagline">Driving growth, operational excellence, and cross-functional alignment</p>
+                <p class="hero-description">I help tech companies scale efficiently through data-driven strategy, cross-functional leadership, and operational excellence. With 11+ years of experience building and scaling businesses across consulting, marketplace, and SaaS environments, I deliver measurable results that accelerate your path to profitability.</p>
+                <a href="case-studies.html" class="cta-button">View My Work</a>
+                <a href="contact.html" class="secondary-button">Get In Touch</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/dhruv-profile.jpg" alt="Dhruv Goel headshot">
+            </div>
+        </section>
+    </div>
+    
+    <section class="value-proposition">
+        <div class="container">
+            <h2 class="section-title">How I Drive Value</h2>
+            <div class="value-cards">
+                <div class="value-card">
+                    <h3>Strategic Operations</h3>
+                    <p>I design and implement operational frameworks that scale with your business, ensuring efficiency while maintaining quality. At Uber, I grew trips 31% and revenue 35% by building new processes to enhance marketplace dynamics.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Cross-Functional Leadership</h3>
+                    <p>I excel at breaking down silos and aligning teams toward common objectives. At Octagos Health, I established shared objectives across sales, marketing, product, customer success, and finance teams to achieve growth targets.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>I build metrics frameworks and analytics systems that provide actionable insights. I've developed KPIs and dashboards that enable leadership teams to make informed decisions driving business growth.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Go-to-Market Strategy</h3>
+                    <p>I develop effective GTM strategies that drive revenue growth. At Bain, I achieved substantial growth by incentivizing channel partners to prioritize profitable customer segments for a B2B cybersecurity SaaS company.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Revenue Operations</h3>
+                    <p>I build the systems and processes needed to scale revenue efficiently. At Octagos Health, I generated significant new ARR by building a CRM, establishing a sales funnel, and creating operational dashboards.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Financial Analysis</h3>
+                    <p>I leverage financial analysis to identify opportunities and optimize resources. In private equity due diligence work at Bain, I identified ~$100M in synergies by building detailed cost structure models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Me</h4>
+                    <p>Strategy and Operations leader with 11+ years of experience across consulting (Bain, EY), B2B SaaS (Octagos Health), and marketplace (Uber) environments. MBA from Kellogg School of Management with expertise in scaling businesses across various growth stages.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="mailto:dgoel2003@gmail.com">dgoel2003@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/dhruvgoel2/" target="_blank">LinkedIn</a>
+                    <div class="social-links">
+                        <!-- You can add social media icons here -->
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dhruv Goel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

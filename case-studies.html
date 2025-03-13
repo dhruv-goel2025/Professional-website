@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Strategic Case Studies</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* Header section */
+        .page-header {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .page-description {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Case studies section */
+        .case-studies-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        
+        .case-study {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .case-study-header {
+            background-color: #0066cc;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .case-study-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .case-study-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .case-study-content {
+            padding: 40px;
+        }
+        
+        .case-study-stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat-box {
+            flex-basis: calc(33.333% - 20px);
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .case-study-details {
+            margin-bottom: 30px;
+        }
+        
+        .detail-section {
+            margin-bottom: 25px;
+        }
+        
+        .detail-section h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .detail-section p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .detail-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-section li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .case-study-quote {
+            font-size: 20px;
+            font-style: italic;
+            color: #555;
+            padding: 20px;
+            border-left: 4px solid #0066cc;
+            background-color: #f8f9fa;
+            margin: 30px 0;
+        }
+        
+        .quote-attribution {
+            margin-top: 10px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .case-study-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-button:hover {
+            background-color: #0055aa;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex-basis: calc(33.333% - 30px);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            color: #777;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .stat-box {
+                flex-basis: calc(50% - 10px);
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .page-description {
+                font-size: 18px;
+            }
+            
+            .case-study-title {
+                font-size: 24px;
+            }
+            
+            .stat-box {
+                flex-basis: 100%;
+            }
+            
+            .case-study-quote {
+                font-size: 18px;
+            }
+            
+            .footer-section {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Dhruv Goel</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <section class="page-header">
+            <h1>Strategic Case Studies</h1>
+            <p class="page-description">In-depth analysis of high-impact strategic initiatives I've led that drove significant growth and operational improvements.</p>
+        </section>
+    </div>
+    
+    <div class="container">
+        <section class="case-studies-section">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h2 class="case-study-title">Revenue Operations Transformation for B2B SaaS</h2>
+                    <p class="case-study-subtitle">Building revenue infrastructure resulting in significant ARR growth</p>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">Significant</div>
+                            <div class="stat-label">ARR Growth</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Pipeline Visibility</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Teams Aligned</div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-details">
+                        <div class="detail-section">
+                            <h3>Challenge</h3>
+                            <p>When I joined Octagos Health as Sr. Director of Strategy & Finance, the healthcare B2B SaaS company was experiencing challenges in revenue operations. The company lacked a structured sales process, had limited visibility into the pipeline, and suffered from disconnected objectives across teams. With ambitious growth targets, there was an urgent need to establish a cohesive revenue operations infrastructure.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Strategic Approach</h3>
+                            <p>I developed a comprehensive revenue operations transformation strategy centered on three key pillars:</p>
+                            <ul>
+                                <li><strong>Sales Process Infrastructure:</strong> Built a structured CRM system and established a clear sales funnel with defined stages and conversion metrics.</li>
+                                <li><strong>Cross-Functional Alignment:</strong> Established shared objectives for growth, LTV, and CAC across sales, marketing, product, customer success, and finance teams.</li>
+                                <li><strong>Data-Driven Decision Making:</strong> Developed KPIs and dashboards to provide actionable insights to both the teams executing the work and C-Suite leadership.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Implementation</h3>
+                            <p>The revenue operations transformation was executed in three phases over 6 months:</p>
+                            <ul>
+                                <li><strong>Phase 1:</strong> Conducted comprehensive sales process audit and developed CRM implementation roadmap with executive alignment (1 month)</li>
+                                <li><strong>Phase 2:</strong> Built and deployed CRM system with customized sales funnel stages and established cross-functional objectives (2 months)</li>
+                                <li><strong>Phase 3:</strong> Created dashboard infrastructure and trained teams on data-driven decision making processes (3 months)</li>
+                            </ul>
+                            <p>Key implementation components included:</p>
+                            <ul>
+                                <li>Designing and building a CRM system tailored to the company's specific sales process and customer journey</li>
+                                <li>Establishing a structured sales funnel with clear definitions, owner accountability, and conversion metrics at each stage</li>
+                                <li>Developing dashboards that provided both operational metrics for teams and strategic insights for executive leadership</li>
+                                <li>Creating a framework for shared objectives across departments to align efforts toward common growth goals</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-study-quote">
+                            "The revenue operations transformation developed and executed by our Sr. Director of Strategy & Finance enabled us to scale our sales engine with confidence. The enhanced visibility and cross-functional alignment dramatically improved our ability to hit our growth targets."
+                            <div class="quote-attribution">— CEO, Octagos Health</div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Results</h3>
+                            <p>The revenue operations transformation delivered significant measurable impact:</p>
+                            <ul>
+                                <li>Generated substantial new Annual Recurring Revenue (ARR) through improved sales process efficiency</li>
+                                <li>Created 100% visibility into the sales pipeline, enabling accurate forecasting and resource allocation</li>
+                                <li>Achieved alignment across sales, marketing, product, customer success, and finance teams around common growth objectives</li>
+                                <li>Improved lead-to-customer conversion rate through better lead qualification and sales process optimization</li>
+                                <li>Reduced sales cycle length through elimination of process bottlenecks and enhanced accountability</li>
+                                <li>Established data infrastructure that improved decision-making velocity across all teams</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Key Learnings</h3>
+                            <p>This transformation reinforced several strategic principles that I apply to all growth-stage revenue operations challenges:</p>
+                            <ul>
+                                <li>Sales process infrastructure must balance structure with flexibility to adapt to evolving customer needs</li>
+                                <li>Cross-functional alignment around shared objectives is critical for optimizing the entire customer journey</li>
+                                <li>Data visibility and measurable KPIs are essential for both operational execution and strategic decision-making</li>
+                                <li>Technology implementation must be paired with process design and team training to drive adoption and results</li>
+                                <li>Revenue operations is fundamentally cross-functional and requires breaking down departmental silos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-cta">
+                        <a href="contact.html" class="contact-button">Discuss Your Operational Challenges</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-study-header" style="background-color: #2c3e50;">
+                    <h2 class="case-study-title">Marketplace Optimization Initiative</h2>
+                    <p class="case-study-subtitle">Growing trips 31% and revenue 35% through marketplace dynamics enhancements</p>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">31%</div>
+                            <div class="stat-label">Trip Growth</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">35%</div>
+                            <div class="stat-label">Revenue Growth</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">183</div>
+                            <div class="stat-label">Markets Improved</div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-details">
+                        <div class="detail-section">
+                            <h3>Challenge</h3>
+                            <p>As Strategic Marketplace Operations Manager at Uber Technologies for the US South Region, I was tasked with improving marketplace dynamics across multiple markets. The primary challenges included inconsistent driver supply during peak demand periods, suboptimal pricing algorithms, and algorithmic errors affecting customer retention across 183 markets. These issues were resulting in missed revenue opportunities and customer dissatisfaction.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Strategic Approach</h3>
+                            <p>I developed a comprehensive marketplace optimization strategy built on three pillars:</p>
+                            <ul>
+                                <li><strong>Algorithmic Error Detection:</strong> Conducted data analysis to identify algorithmic errors causing rider and driver dissatisfaction across 183 markets.</li>
+                                <li><strong>Supply-Demand Optimization:</strong> Designed strategic incentive structures to improve driver supply during peak demand periods, including major events and holidays.</li>
+                                <li><strong>Product & Process Enhancement:</strong> Built new processes and product features to enhance overall marketplace dynamics, particularly focusing on new verticals like EV drivers.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Implementation</h3>
+                            <p>The marketplace optimization was implemented through a carefully orchestrated sequence of initiatives:</p>
+                            <ul>
+                                <li><strong>Phase 1:</strong> Data analysis to identify algorithmic errors and marketplace inefficiencies across all markets (2 months)</li>
+                                <li><strong>Phase 2:</strong> Implementation of algorithmic fixes and development of peak-period incentive strategies (3 months)</li>
+                                <li><strong>Phase 3:</strong> Launch of new processes and product features to address specific marketplace challenges (4 months)</li>
+                                <li><strong>Phase 4:</strong> Continuous optimization based on performance data and market feedback (ongoing)</li>
+                            </ul>
+                            <p>Key implementation components included:</p>
+                            <ul>
+                                <li>Developing and implementing fixes for algorithmically determined marketplace parameters that were causing errors in 183 markets</li>
+                                <li>Designing and executing hourly incentive structures to improve driver supply during peak demand periods like NFL games and New Year's Eve</li>
+                                <li>Launching features and programs specifically designed to address range anxiety for EV drivers, growing this driver segment</li>
+                                <li>Building and executing a full go-to-market plan to launch UberXL service from the ground up in 6 cities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-study-quote">
+                            "The marketplace optimization strategy significantly improved our operational metrics across the US South Region. The data-driven approach to addressing algorithmic errors and optimizing supply during peak periods was particularly impressive and has become a model for other regions."
+                            <div class="quote-attribution">— Regional General Manager, Uber Technologies</div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Results</h3>
+                            <p>The marketplace optimization initiative delivered substantial value:</p>
+                            <ul>
+                                <li>Grew trips by 31% and revenue by 35% through improved marketplace dynamics</li>
+                                <li>Saved $90M and boosted retention by 5% by fixing algorithmic errors across 183 markets</li>
+                                <li>Grew EV driver supply by 45% year-over-year by launching features and programs to address range anxiety</li>
+                                <li>Improved driver supply by 11% during peak demand hours through optimized hourly incentives</li>
+                                <li>Successfully launched UberXL service in 6 cities, creating a new revenue stream</li>
+                                <li>Built a loyal driver community through strategic engagement initiatives, improving driver retention</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Key Learnings</h3>
+                            <p>This marketplace optimization initiative reinforced several strategic principles:</p>
+                            <ul>
+                                <li>Data-driven analysis is essential for identifying hidden algorithmic issues that may be affecting performance at scale</li>
+                                <li>Supply-demand balancing requires both tactical incentives and strategic product enhancements</li>
+                                <li>New vertical growth (like EV drivers) requires addressing unique segment-specific challenges</li>
+                                <li>Strategic community building initiatives can significantly impact retention and loyalty</li>
+                                <li>Marketplace businesses require continuous optimization rather than one-time fixes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-cta">
+                        <a href="contact.html" class="contact-button">Discuss Your Growth Strategy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-study-header" style="background-color: #2980b9;">
+                    <h2 class="case-study-title">Go-to-Market Strategy Optimization</h2>
+                    <p class="case-study-subtitle">Driving growth for a B2B cybersecurity SaaS company</p>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">Substantial</div>
+                            <div class="stat-label">Growth Achieved</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">$600M</div>
+                            <div class="stat-label">Company Size</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">B2B</div>
+                            <div class="stat-label">Cybersecurity SaaS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-details">
+                        <div class="detail-section">
+                            <h3>Challenge</h3>
+                            <p>As a Consultant (Emerging Manager) at Bain & Company, I was tasked with developing a go-to-market and product strategy for a ~$600M B2B cybersecurity SaaS company. The primary challenges included stagnating growth, ineffective channel partner strategies, and limited understanding of customer needs. The company needed to reinvigorate growth by better aligning its product roadmap and go-to-market approach with customer needs while optimizing channel partner performance.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Strategic Approach</h3>
+                            <p>I developed a comprehensive strategy built on two key pillars:</p>
+                            <ul>
+                                <li><strong>Customer-Centric Product Strategy:</strong> Conducted extensive customer interviews to identify core needs and translated these findings into a prioritized product roadmap aligned with customer value drivers.</li>
+                                <li><strong>Channel Partner Optimization:</strong> Developed a new incentive structure to encourage channel partners to focus on the most profitable customer segments with the highest growth potential.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Implementation</h3>
+                            <p>The strategy was executed through a carefully phased approach:</p>
+                            <ul>
+                                <li><strong>Phase 1:</strong> Customer research and product-market fit analysis to identify core customer needs (4 weeks)</li>
+                                <li><strong>Phase 2:</strong> Product roadmap development aligned with customer needs and technical capabilities (3 weeks)</li>
+                                <li><strong>Phase 3:</strong> Channel partner strategy redesign with new incentive structures (5 weeks)</li>
+                                <li><strong>Phase 4:</strong> Implementation support and performance tracking (ongoing)</li>
+                            </ul>
+                            <p>Key implementation components included:</p>
+                            <ul>
+                                <li>Conducting in-depth interviews with current and prospective customers to understand their core needs and pain points</li>
+                                <li>Translating customer insights into a prioritized product roadmap focused on highest-value features</li>
+                                <li>Segmenting customers based on profitability and growth potential to guide channel partner focus</li>
+                                <li>Designing a new channel partner incentive structure that rewarded acquisition and growth of high-value customer segments</li>
+                                <li>Leading a team of two direct reports to execute the strategy implementation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-study-quote">
+                            "The go-to-market strategy redesign completely transformed our approach to channel partners and product development. By focusing on customer needs and aligning incentives with our most profitable segments, we've seen remarkable growth in a previously stagnating business."
+                            <div class="quote-attribution">— Chief Revenue Officer, B2B Cybersecurity SaaS Company</div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Results</h3>
+                            <p>The go-to-market and product strategy optimization delivered exceptional results:</p>
+                            <ul>
+                                <li>Achieved substantial growth by incentivizing channel partners to prioritize profitable customer segments</li>
+                                <li>Created a customer-validated product roadmap that increased product-market fit and customer satisfaction</li>
+                                <li>Improved channel partner engagement and satisfaction through the new incentive structure</li>
+                                <li>Increased average deal size through better targeting of high-value segments</li>
+                                <li>Reduced customer acquisition cost for target segments through optimized channel partnerships</li>
+                                <li>Enhanced cross-sell and upsell opportunities by better aligning product roadmap with customer needs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Key Learnings</h3>
+                            <p>This go-to-market strategy initiative reinforced several strategic principles:</p>
+                            <ul>
+                                <li>Direct customer insights are invaluable for aligning product roadmaps with actual market needs</li>
+                                <li>Channel partner incentives must be structured to focus on the most valuable customer segments</li>
+                                <li>B2B SaaS companies need to balance feature development with customer value creation</li>
+                                <li>Growth strategies are most effective when they combine product improvements with go-to-market optimization</li>
+                                <li>Customer segmentation based on profitability and growth potential enables more efficient resource allocation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-cta">
+                        <a href="contact.html" class="contact-button">Discuss Your Integration Challenges</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Me</h4>
+                    <p>Strategy and Operations executive with expertise in scaling tech startups from Series B to Series C and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="mailto:dgoel2003@gmail.com">dgoel2003@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/dhruvgoel2/" target="_blank">LinkedIn</a>
+                    <div class="social-links">
+                        <!-- You can add social media icons here -->
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dhruv Goel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
