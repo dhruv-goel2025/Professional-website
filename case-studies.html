@@ -172,6 +172,57 @@
             font-weight: bold;
         }
         
+        /* Expandable card content */
+        .content-preview {
+            display: block;
+        }
+        
+        .content-full {
+            display: none;
+        }
+        
+        .expanded .content-preview {
+            display: none;
+        }
+        
+        .expanded .content-full {
+            display: block;
+        }
+        
+        .see-more-btn {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .see-more-btn:hover {
+            background-color: #0055aa;
+        }
+        
+        .see-less-btn {
+            display: inline-block;
+            background-color: #666;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .see-less-btn:hover {
+            background-color: #555;
+        }
+        
         /* Footer */
         footer {
             background-color: #1a1a1a;
@@ -283,29 +334,40 @@
                 </div>
                 <div class="project-content">
                     <div class="project-text">
-                        <h3>Building This Website in Under an Hour with AI</h3>
-                        <p>I built this website in <strong>under an hour</strong> using <strong>Claude 3.7</strong>! This tech isn't exactly new—I've heard about AI-assisted web development for a while—but a friend finally inspired me to test it out.</p>
-                        <p>There are plenty of AI website builders out there, but I chose <strong>Claude</strong> because it could pull directly from my resume to generate most of the content. And honestly? It was <strong>remarkably simple</strong>. The end result looks far more polished than what I've seen from some other LLMs I've tested (<em>cough</em> OpenAI <em>cough</em>).</p>
+                        <div class="content-preview">
+                            <h3>Building This Website in Under an Hour with AI</h3>
+                            <p>I built this website in <strong>under an hour</strong> using <strong>Claude 3.7</strong>! This tech isn't exactly new—I've heard about AI-assisted web development for a while—but a friend finally inspired me to test it out.</p>
+                            <p>There are plenty of AI website builders out there, but I chose <strong>Claude</strong> because it could pull directly from my resume to generate most of the content. And honestly? It was <strong>remarkably simple</strong>.</p>
+                            <button class="see-more-btn" onclick="expandCard(this)">See More</button>
+                        </div>
                         
-                        <h3>Why This is a Game-Changer for Operators</h3>
-                        <p>Having worked on web development projects a few times in my career, I <strong>wish this technology had existed sooner</strong>. The implications for a <strong>0-to-1 startup environment</strong> are massive:</p>
-                        <ul>
-                            <li><span class="checkmark">✅</span> <strong>Bridging the gap between technical & non-technical teams</strong> – As a non-technical operator, I can now articulate my vision more clearly when working with web developers.</li>
-                            <li><span class="checkmark">✅</span> <strong>Faster prototyping</strong> – Instead of waiting weeks for a first draft, I can spin up a starting point myself and hand over a working concept.</li>
-                            <li><span class="checkmark">✅</span> <strong>Iterating with AI</strong> – The ability to tweak content, refine designs, and even experiment with different messaging makes this a powerful tool for early-stage companies.</li>
-                        </ul>
-                        
-                        <h3>Limitations & Lessons Learned</h3>
-                        <p>Of course, <strong>this wasn't a perfect, one-click solution</strong>. I ran into a few roadblocks:</p>
-                        <ul>
-                            <li><span class="warning">🔄</span> <strong>Prompt repetition</strong> – I had to <strong>rephrase and refine prompts multiple times</strong> to debug issues and adjust the content/design.</li>
-                            <li><span class="warning">🎨</span> <strong>Tone & aesthetics adjustments</strong> – Getting Claude to fully understand the exact look and feel I wanted took a bit of back-and-forth.</li>
-                            <li><span class="warning">🚧</span> <strong>80/20 rule applies</strong> – Like most AI tools today, this got me to <strong>80% very quickly</strong>, but it still required <strong>hands-on fine-tuning</strong> to reach 100%.</li>
-                        </ul>
-                        
-                        <h3>Final Thoughts</h3>
-                        <p>AI-powered web development isn't replacing designers or engineers anytime soon, but it's an <strong>incredible accelerator</strong>—especially for non-technical folks like me. Whether it's for <strong>rapid prototyping, content drafting, or just making conversations with dev teams more productive</strong>, tools like this are changing the game.</p>
-                        <p>Would I use AI to build a full-scale website from scratch? Probably not. Would I use it again for quick projects, MVPs, or internal tools? <strong>Absolutely.</strong></p>
+                        <div class="content-full">
+                            <h3>Building This Website in Under an Hour with AI</h3>
+                            <p>I built this website in <strong>under an hour</strong> using <strong>Claude 3.7</strong>! This tech isn't exactly new—I've heard about AI-assisted web development for a while—but a friend finally inspired me to test it out.</p>
+                            <p>There are plenty of AI website builders out there, but I chose <strong>Claude</strong> because it could pull directly from my resume to generate most of the content. And honestly? It was <strong>remarkably simple</strong>. The end result looks far more polished than what I've seen from some other LLMs I've tested (<em>cough</em> OpenAI <em>cough</em>).</p>
+                            
+                            <h3>Why This is a Game-Changer for Operators</h3>
+                            <p>Having worked on web development projects a few times in my career, I <strong>wish this technology had existed sooner</strong>. The implications for a <strong>0-to-1 startup environment</strong> are massive:</p>
+                            <ul>
+                                <li><span class="checkmark">✅</span> <strong>Bridging the gap between technical & non-technical teams</strong> – As a non-technical operator, I can now articulate my vision more clearly when working with web developers.</li>
+                                <li><span class="checkmark">✅</span> <strong>Faster prototyping</strong> – Instead of waiting weeks for a first draft, I can spin up a starting point myself and hand over a working concept.</li>
+                                <li><span class="checkmark">✅</span> <strong>Iterating with AI</strong> – The ability to tweak content, refine designs, and even experiment with different messaging makes this a powerful tool for early-stage companies.</li>
+                            </ul>
+                            
+                            <h3>Limitations & Lessons Learned</h3>
+                            <p>Of course, <strong>this wasn't a perfect, one-click solution</strong>. I ran into a few roadblocks:</p>
+                            <ul>
+                                <li><span class="warning">🔄</span> <strong>Prompt repetition</strong> – I had to <strong>rephrase and refine prompts multiple times</strong> to debug issues and adjust the content/design.</li>
+                                <li><span class="warning">🎨</span> <strong>Tone & aesthetics adjustments</strong> – Getting Claude to fully understand the exact look and feel I wanted took a bit of back-and-forth.</li>
+                                <li><span class="warning">🚧</span> <strong>80/20 rule applies</strong> – Like most AI tools today, this got me to <strong>80% very quickly</strong>, but it still required <strong>hands-on fine-tuning</strong> to reach 100%.</li>
+                            </ul>
+                            
+                            <h3>Final Thoughts</h3>
+                            <p>AI-powered web development isn't replacing designers or engineers anytime soon, but it's an <strong>incredible accelerator</strong>—especially for non-technical folks like me. Whether it's for <strong>rapid prototyping, content drafting, or just making conversations with dev teams more productive</strong>, tools like this are changing the game.</p>
+                            <p>Would I use AI to build a full-scale website from scratch? Probably not. Would I use it again for quick projects, MVPs, or internal tools? <strong>Absolutely.</strong></p>
+                            
+                            <button class="see-less-btn" onclick="collapseCard(this)">See Less</button>
+                        </div>
                     </div>
                     <div class="project-media">
                         <img src="./images/claude-website.png" alt="Building website with Claude AI" onerror="this.src='/api/placeholder/500/300'; this.alt='Placeholder for Claude AI website building image';">
@@ -343,5 +405,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        function expandCard(button) {
+            const card = button.closest('.project-card');
+            card.classList.add('expanded');
+        }
+        
+        function collapseCard(button) {
+            const card = button.closest('.project-card');
+            card.classList.remove('expanded');
+            // Scroll back to the top of the card
+            card.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
