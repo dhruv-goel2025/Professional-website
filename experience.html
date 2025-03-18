@@ -298,22 +298,53 @@
         }
         
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 36px;
-            }
-            
-            .page-description {
-                font-size: 18px;
-            }
-            
-            .skill-category {
-                flex-basis: 100%;
-            }
-            
-            .footer-section {
-                flex-basis: 100%;
-            }
-        }
+    .page-header h1 {
+        font-size: 36px;
+    }
+    
+    .page-description {
+        font-size: 18px;
+    }
+    
+    /* Keep your existing skill category rule */
+    .skill-category {
+        flex-basis: 100%;
+    }
+    
+    .footer-section {
+        flex-basis: 100%;
+    }
+    
+    /* Add these new rules for navigation */
+    .logo {
+        font-size: 20px;
+    }
+    
+    .nav-links li {
+        margin-left: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+/* Add this new media query for smaller screens */
+@media (max-width: 480px) {
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links li {
+        margin-left: 5px;
+    }
+    
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+}
     </style>
 </head>
 <body>
