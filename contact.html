@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhruv Goel - Contact</title>
-    <!-- Add the Email.js script -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         /* Reset and base styles */
         * {
@@ -203,26 +201,6 @@
             background-color: #0055aa;
         }
         
-        /* Status message styling */
-        .status-message {
-            padding: 10px 15px;
-            margin-top: 20px;
-            border-radius: 5px;
-            display: none;
-        }
-        
-        .success-message {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .error-message {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
         /* Footer */
         footer {
             background-color: #1a1a1a;
@@ -365,7 +343,7 @@
                 <div class="contact-form">
                     <h2 class="section-title">Send Me a Message</h2>
                     
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xvgkgjzq" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -397,14 +375,6 @@
                         </div>
                         
                         <button type="submit" class="submit-button">Send Message</button>
-                        
-                        <!-- Status messages -->
-                        <div id="success-message" class="status-message success-message">
-                            Thank you for your message! I'll get back to you as soon as possible.
-                        </div>
-                        <div id="error-message" class="status-message error-message">
-                            Sorry, there was a problem sending your message. Please try again later.
-                        </div>
                     </form>
                 </div>
             </div>
@@ -441,61 +411,18 @@
     </footer>
     
     <script>
-        // Initialize EmailJS with your public key
-        (function() {
-            emailjs.init("JNTLltMUzclfo6Rz3");
-        })();
-        
+        // Simple form enhancement
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.getElementById('contactForm');
             const submitButton = contactForm.querySelector('.submit-button');
-            const successMessage = document.getElementById('success-message');
-            const errorMessage = document.getElementById('error-message');
             
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Hide any previous messages
-                successMessage.style.display = 'none';
-                errorMessage.style.display = 'none';
-                
-                // Change button text and disable to prevent multiple submissions
+            contactForm.addEventListener('submit', function() {
+                // Change button text to show processing
                 submitButton.textContent = "Sending...";
                 submitButton.disabled = true;
                 
-                // Prepare template parameters
-                const templateParams = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    company: document.getElementById('company').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
-                };
-                
-                // Send email using EmailJS
-                emailjs.send('service_ng5us2q', 'template_y35iwlc', templateParams)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        
-                        // Show success message
-                        successMessage.style.display = 'block';
-                        
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Reset button
-                        submitButton.textContent = "Send Message";
-                        submitButton.disabled = false;
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        
-                        // Show error message
-                        errorMessage.style.display = 'block';
-                        
-                        // Reset button
-                        submitButton.textContent = "Send Message";
-                        submitButton.disabled = false;
-                    });
+                // Form will be submitted to Formspree
+                // Button will be reset when page reloads after submission
             });
         });
     </script>
